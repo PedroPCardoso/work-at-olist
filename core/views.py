@@ -5,6 +5,7 @@ from rest_framework.parsers import JSONParser
 from core.models import CallInitial,CallEnd
 from core.serializers import CallInitialSerializer,CallEndSerializer
 
+
 class JSONResponse(HttpResponse):
     """
     An HttpResponse that renders its content into JSON.
@@ -32,3 +33,4 @@ def list(request):
             serializer.save()
             return JSONResponse(serializer.data, status=201)
         return JSONResponse(serializer.errors, status=400)
+
